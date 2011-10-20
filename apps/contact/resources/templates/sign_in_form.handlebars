@@ -1,0 +1,14 @@
+<form id="signup_form">
+	{{#view SC.TextField valueBinding="Contact.signInController.email"}}
+	  <input class="email" type="text" name="email" placeholder="Email" />
+	{{/view}}
+	{{#view SC.TextField valueBinding="Contact.signInController.password"}}
+	  <input class="password" type="password" name="password" placeholder="Password" />
+	{{/view}}
+	  <input class="confirm_password" type="password" placeholder="Confirm Password" />
+
+	{{#view SC.Button action="signIn"}}
+	  <input id="sign_in_button" class="blue_button" value="Sign up for Wishlist"/>
+	{{/view}}
+</form>
+

@@ -1,0 +1,32 @@
+<div id="add_product_container">
+	<div id="add_product_instructions">
+		<h3>Add a product to your <strong>Wishlist</strong> manually:</h3>
+		<p><strong>Note:</strong> The "Image" field should be a URL link. Image file uploads will be available soon.</p>
+	</div>
+
+	{{#view SC.TextField classNames="product_input" valueBinding="Contact.productosController.title" hint="Product name"}}
+		<input placeholder="Product name" />
+	{{/view}}
+	
+	{{#view SC.TextField classNames="product_input" valueBinding="Contact.productosController.price" hint="Price"}}
+		<input placeholder="Price" />
+	{{/view}}
+	
+	{{#view SC.TextField classNames="product_input" valueBinding="Contact.productosController.body" hint="Description"}}
+		<input placeholder="Product description" />
+	{{/view}}
+	
+	{{#view SC.TextField classNames="product_input" valueBinding="Contact.productosController.image" hint="Image URL (optional)"}}
+		<input placeholder="Image URL (optional)" />
+	{{/view}}
+	
+	<div id="submit_or_cancel">
+		{{#view SC.Button target="Contact.productsListController" action="submitProduct"}}
+		  <input id="submit_product_button" class="blue_button" value="Submit"/>
+		{{/view}}
+		
+		{{#view SC.Button target="Contact.productsListController" action="cancelProductAddition" classNames="cancel_button"}}
+			<a>Cancel</a>
+		{{/view}}
+	</div>
+</div>

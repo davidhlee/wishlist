@@ -1,0 +1,71 @@
+<div id="product_page_bg">
+	<div id="product_page">
+		<div class="product_container">
+			<div id="wishlist">
+				<div id="wishlist_header">	
+					<div class="user_profile_container">
+						<div class="user_profile_avatar">
+							<img class="user_profile_avatar" alt=""/>
+						</div>
+						<p class="user_name">David Lee</p>
+					</div>
+					<div class="logout_button_container">
+						{{#view SC.Button action="signOut"}}
+							<a class="logout_button">Log out</a>
+						{{/view}}
+					</div>
+				</div>
+				<div id="wishlist_body">
+					<div id="wishlist_utility_dock">
+						<div id="wishlist_product_total">
+							<label>Total:</label>
+							{{view totalPriceView name="name"}}
+						</div>
+						<div id="pay_or_add_buttons">
+							<div id="add_payment_container">
+								<a id="add_payment_method_button" action="selectPaymentMethodState.enterState">Add Payment Method:</a>
+								<ul id="payment_method_list">
+									<li id="amex"></li>
+									<li id="cash"></li>
+								</ul>
+							</div>
+							{{#view SC.Button target="Contact.productsListController" action="addProduct" id="add_product_button_container"}}
+								<a id="add_product_button">Add Product</a>
+							{{/view}}
+						</div>
+						
+						
+						{{view addNewProductView}}
+						{{view selectPaymentMethod}}						
+						
+						
+					</div>					
+					{{#collection productCollectionView}}
+						<div class="product_item_container">
+							<div class="product_image_container">
+								<a {{bindAttr href="content.image"}} target="_blank">
+									<img {{bindAttr src="content.image"}} {{bindAttr alt="content.image"}}/>
+								</a>
+								<div class="product_image_shadow"></div>
+								<div class="product_price">
+									$ {{content.price}}
+								</div>
+							</div>
+							<div class="text_container">
+								<div class="title_container">
+									{{content.title}}
+								</div>
+								<div class="description_container">
+									{{content.body}}
+								</div>
+								
+								<!--<a action="productDetailState.enterState">Show more vendors...</a>-->
+							
+							</div>
+						</div>
+					{{/collection}}	
+				</div>
+			</div>
+		</div> <!--! end of #container -->
+	</div>
+</div>
